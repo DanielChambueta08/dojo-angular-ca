@@ -1,0 +1,10 @@
+<bc-header>
+  <bc-header-left logoName="bancolombia-horizontal" ></bc-header-left>
+  <bc-header-list *ngIf="headerSandbox.infoSession">
+    <bc-header-item icon="home" itemType="any" route="/" text="Home"></bc-header-item>
+    <bc-header-item *ngIf="headerSandbox.infoSession.logged" icon="pocket" text="Pocket" route="pocket"></bc-header-item>
+    <bc-header-item *ngIf="headerSandbox.infoSession.logged" [text]="headerSandbox.infoSession.profile.name || ''" itemType="user" userAvatar="https://picsum.photos/100/100" route="profile"></bc-header-item>
+    <bc-header-item *ngIf="!headerSandbox.infoSession.logged" icon="login" itemType="logout" text="Log In" route="#" (click)="logIn()"></bc-header-item>
+    <bc-header-item *ngIf="headerSandbox.infoSession.logged" icon="quit" itemType="logout"  route="#" text="Cerrar sesión" (click)="logOut()"></bc-header-item>
+  </bc-header-list>
+</bc-header>

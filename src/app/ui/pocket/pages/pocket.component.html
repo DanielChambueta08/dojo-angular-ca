@@ -1,0 +1,23 @@
+<div class="module-pocket">
+    <div class="bc-flex bc-direction-column bc-align-items-center">
+        <h2>My Pockets</h2>
+        <div class="bc-container">
+            <div class="bc-row">
+                <div class="bc-col-6" *ngFor="let pocket of (pocketSandbox.pockets$ | async)">
+                    <div bc-card>
+                        <div class="bc-card-icon">
+                            <div class="bc-card-icon-round bc-card-icon-round-primary">
+                                <em class="bc-icon" aria-hidden="true">{{ pocket.icon }}</em>
+                            </div>
+                        </div>
+                        <div class="bc-card-body bc-align-right">
+                            <p class="bc-card-subtitle">{{ pocket.name }}</p>
+                            <p class="bc-card-subtitle-number">$ {{ pocket.amount }}</p>
+                            <p class="bc-card-small-text">{{ pocket.category }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
