@@ -1,0 +1,29 @@
+<div class="module-task">
+  <div class="bc-flex bc-direction-column bc-align-items-center">
+    <h2>Mis Tareas</h2>
+    <div class="bc-container">
+      <div class="bc-row">
+        <div class="bc-col-6" *ngFor="let tarea of (tareasListSandbox.tareas| async)"
+        >
+          <div bc-card>
+            <div class="bc-card-icon">
+            <div class="bc-card-body bc-align-right">
+
+              <p class="bc-card-small-text">{{ tarea.id }}</p>
+              <p class="bc-card-title">{{ tarea.titulo }}</p>
+              <p class="bc-card-subtitle-number">Descripción: {{ tarea.descripcion }}</p>
+              <p class="bc-card-small-text ">Estado: {{ tarea.estado }}</p>
+              <div>
+                <button class="bc-button-primary bc-button">
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+

@@ -14,7 +14,10 @@ import { AppSandbox } from './app.sandbox';
 import { AuthenticationGateway } from './domain/models/authentication/authentication.gateway';
 
 
+
+
 const isIE = window.navigator.userAgent.indexOf('MSIE') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
+
 
 
 @NgModule({
