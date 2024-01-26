@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 import { HeaderModule } from './ui/header/header.module';
 import { AppSandbox } from './app.sandbox';
 import { AuthenticationGateway } from './domain/models/authentication/authentication.gateway';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -28,6 +29,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE') > -1 || window.navigator
     CommonModule,
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule,
     HeaderModule,
     MsalModule.forRoot(new PublicClientApplication({

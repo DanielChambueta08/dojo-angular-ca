@@ -16,6 +16,7 @@ import { TareaModel } from 'src/app/domain/models/tarea/tarea.model';
 export class HttpClientAdapter extends PocketGateway {
 
   private urlListarTareas = 'http://localhost:8081/api/ListarTareas';
+  private urlCrearTareas = 'http://localhost:8081/api/AgregarTarea';
 
   constructor(private httpClient: HttpClient) {
     super();
@@ -53,5 +54,9 @@ export class HttpClientAdapter extends PocketGateway {
   //TAREAS
   public listarTareasG(): Observable<TareaModel[] | null>{
     return this.httpClient.get<TareaModel[] | null>(this.urlListarTareas);
+  }
+
+  public crearTareaG(tarea: TareaModel): Observable<TareaModel> {
+    return this.httpClient.post<TareaModel>(this.urlCrearTareas, tarea);
   }
 }

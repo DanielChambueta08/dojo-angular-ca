@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'listar-tareas',
     loadChildren: () => import('./ui/tareas-list/tareas-list.module').then(m => m.TareasListModule)
+  },
+  {
+    path: 'formulario-tareas',
+    loadChildren: () => import('./ui/formulario-tareas/formulario-tareas.module').then(m => m.FormularioTareasModule)
   }
 ];
 

@@ -1,0 +1,16 @@
+<h2>Crear Tarea</h2>
+<form (ngSubmit)="formularioTareasSandbox.crearTarea()">
+  <label for="id">Id:</label>
+  <input type="text" id="idTarea" [(ngModel)]="formularioTareasSandbox.nuevaTarea.id" [ngModelOptions]="{standalone: true}">
+  <br>
+  <label for="titulo">Título:</label>
+  <input type="text" id="titulo" [(ngModel)]="formularioTareasSandbox.nuevaTarea.titulo" [ngModelOptions]="{standalone: true}">
+  <br>
+  <label for="descripcion">Descripción:</label>
+  <input type="text" id="descripcion" [(ngModel)]="formularioTareasSandbox.nuevaTarea.descripcion" [ngModelOptions]="{standalone: true}">
+<br>
+  <label for="estado">Estado:</label>
+  <input type="text" id="estado" [(ngModel)]="formularioTareasSandbox.nuevaTarea.estado" [ngModelOptions]="{standalone: true}">
+<br>
+  <button class="bc-button-primary bc-button" type="submit">Agregar Tarea</button>
+</form>

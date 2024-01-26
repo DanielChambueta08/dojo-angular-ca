@@ -13,4 +13,8 @@ export class TareaUsecase {
   listarTareasUC(): Observable<TareaModel[] | null> {
     return this.tareaGateway.listarTareasG();
   }
+
+  crearTareaUC(tarea: TareaModel): Observable<TareaModel | null> {
+    return this.tareaGateway.crearTareaG(tarea);
+  }
 }
