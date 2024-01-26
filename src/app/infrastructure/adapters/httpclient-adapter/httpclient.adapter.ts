@@ -10,14 +10,18 @@ import { catchError } from 'rxjs/operators';
 import { API_URL_POCKET } from '../../helpers/constants';
 import { PocketModel } from '../../../domain/models/pocket/pocket.model';
 import { PocketGateway } from '../../../domain/models/pocket/pocket.gateway';
+import { TareaModel } from 'src/app/domain/models/tarea/tarea.model';
 
 @Injectable({ providedIn: 'root' })
 export class HttpClientAdapter extends PocketGateway {
+
+  private urlListarTareas = 'http://localhost:8081/api/ListarTareas';
 
   constructor(private httpClient: HttpClient) {
     super();
   }
 
+  //POCKETS
   getS(): Observable<PocketModel[] | null> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -44,5 +48,10 @@ export class HttpClientAdapter extends PocketGateway {
     }
     console.log(errorMessage);
     return throwError(errorMessage);
+  }
+
+  //TAREAS
+  public listarTareasG(): Observable<TareaModel[] | null>{
+    return this.httpClient.get<TareaModel[] | null>(this.urlListarTareas);
   }
 }
